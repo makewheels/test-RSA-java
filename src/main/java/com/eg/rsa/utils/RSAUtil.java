@@ -114,18 +114,23 @@ public class RSAUtil {
             return;
         PublicKey publicKey = keyPair.getPublic();
         PrivateKey privateKey = keyPair.getPrivate();
-        String message = "Hello World";
+        String message = "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorld" +
+                "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWor" +
+                "ldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld";
 
         Base64.Encoder base64Encoder = Base64.getEncoder();
 
         System.out.println("Public key:");
         System.out.println(base64Encoder.encodeToString(publicKey.getEncoded()));
+        System.out.println();
+
         System.out.println("Private key:");
         System.out.println(base64Encoder.encodeToString(privateKey.getEncoded()));
+        System.out.println();
+
         System.out.println("message: " + message);
         byte[] encrypt = encrypt(message.getBytes(), publicKey);
         System.out.println("encrypt: " + base64Encoder.encodeToString(encrypt));
-
         byte[] decrypt = decrypt(encrypt, privateKey);
         System.out.println("decrypt: " + new String(decrypt));
 
