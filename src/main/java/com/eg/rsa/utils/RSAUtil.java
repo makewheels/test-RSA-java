@@ -50,10 +50,10 @@ public class RSAUtil {
 
         Base64.Encoder base64Encoder = Base64.getEncoder();
 
-        System.out.println("Public key: " + base64Encoder.encodeToString(publicKey.getEncoded()));
-        System.out.println("Private key: " + base64Encoder.encodeToString(privateKey.getEncoded()));
-
-        System.out.println();
+        System.out.println("Public key:");
+        System.out.println(base64Encoder.encodeToString(publicKey.getEncoded()));
+        System.out.println("Private key:");
+        System.out.println(base64Encoder.encodeToString(privateKey.getEncoded()));
         System.out.println("message: " + message);
         byte[] encrypt = encrypt(message.getBytes(), publicKey);
         System.out.println("encrypt: " + base64Encoder.encodeToString(encrypt));
